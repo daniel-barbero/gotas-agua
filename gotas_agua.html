@@ -1,0 +1,235 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>gotas de agua</title>
+
+		<style type="text/css" media="all">
+
+		body{
+		margin: 0; padding: 0;
+		width:100%;height:100%;
+		background-image: url("img/fondo.jpg");
+		background-position: 0px -200px;
+		background-repeat: no-repeat;
+		overflow: hidden;
+		}
+
+		#contenedor{
+		position: relative;
+		z-index: 1;
+		height: 600px;
+		margin-top: 170px;
+		overflow:hidden;
+		-webkit-transform: rotateX(-60deg); -ms-transform: rotateX(-60deg); transform: rotateX(-60deg);
+		/*background-color: rgba(255,255,255,0.35);
+		border:1px solid red;*/
+		}
+
+		#posicion{
+		width:100px;
+		}
+
+		#posicion *{ position: absolute;}
+		
+		#drop {
+		visibility: hidden;
+		background: rgba(0,200,255,0.15);
+		width: 10px; height: 10px;
+		border-bottom-right-radius: 19px;
+		border-bottom-left-radius: 40px;
+		border-top-right-radius: 40px;
+		border-top-left-radius: 4px;
+
+		-webkit-animation-name: drop; -webkit-animation-duration: 1800ms; -webkit-animation-timing-function: linear;
+		animation-name: drop; animation-duration: 1800ms; animation-timing-function: linear;
+		}
+
+
+		@-webkit-keyframes drop{
+			0%{
+				visibility: visible;
+			    -webkit-transform: translate(0px, -850px) rotate(45deg);
+				}
+			100%{
+			    visibility: visible;
+				-webkit-transform: translate(0px, 0px) rotate(45deg);
+				}
+		}
+		
+		@keyframes drop{
+			0%{
+				visibility: visible;
+				-ms-transform: translate(0px, -850px) rotate(45deg);
+				transform: translate(0px, -850px) rotate(45deg);
+				}
+			100%{
+			    visibility: visible;
+				-ms-transform: translate(0px, 0px) rotate(45deg);
+				transform: translate(0px, 0px) rotate(45deg);
+				}
+		}
+
+
+		.ring0 {
+		    width: 150px;
+		    height: 150px;
+		    border-radius: 150px;
+		    -webkit-animation-name: onda1;
+		    -webkit-animation-delay: 2800ms; 
+		    -webkit-animation-duration: 600ms;
+		    -webkit-animation-iteration-count: 2;
+			animation-name: onda1;
+		    animation-delay: 2800ms; 
+		    animation-duration: 600ms;
+		    animation-iteration-count: 2;
+		}
+
+		.ring1{
+		    width: 100px;
+		    height: 100px;
+		    border-radius: 100px;
+		    -webkit-animation-name: onda1;
+		    -webkit-animation-delay: 2250ms;
+		    -webkit-animation-duration: 600ms;
+		    -webkit-animation-iteration-count: 2;
+			animation-name: onda1;
+		    animation-delay: 2250ms;
+		    animation-duration: 600ms;
+		    animation-iteration-count: 2;
+		}
+
+		.ring2{
+		    width: 50px;
+		    height: 50px;
+		    border-radius: 50px;
+		    -webkit-animation-name: onda1;
+		    -webkit-animation-delay: 1850ms;
+		    -webkit-animation-duration: 500ms;
+		    -webkit-animation-iteration-count: 2;
+			animation-name: onda1;
+		    animation-delay: 1850ms;/* duracion del drop */
+		    animation-duration: 500ms;
+		    animation-iteration-count: 2;
+		}
+
+
+
+		@-webkit-keyframes onda1{
+			0%{
+	    visibility: visible;
+		-webkit-animation-timing-function: ease-in;
+		-webkit-box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.075), -5px -5px 15px rgba(0, 0, 0, 0.075);
+			}
+
+			100%{
+		visibility: visible;
+		-webkit-animation-timing-function: ease-out;
+		-webkit-box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.075), -5px -5px 15px rgba(0, 0, 0, 0.075);
+			}
+		}
+		
+		@keyframes onda1{
+			0%{
+	    visibility: visible;
+		animation-timing-function: ease-in;
+		box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.075), -5px -5px 15px rgba(0, 0, 0, 0.075);
+			}
+
+			100%{
+		visibility: visible;
+		animation-timing-function: ease-out;
+		box-shadow: 5px 5px 15px rgba(255, 255, 255, 0.075), -5px -5px 15px rgba(0, 0, 0, 0.075);
+			}
+		}
+
+		@-webkit-keyframes onda2{
+			0%{
+	    visibility: visible;
+		-webkit-animation-timing-function: ease-out;
+		-webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1), -5px -5px 5px rgba(255, 255, 255, 0.1);
+			}
+
+			100%{
+	    visibility: hidden;
+		-webkit-animation-timing-function: ease-in;
+		-webkit-box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.3), -5px -5px 5px rgba(0, 0, 0, 0.3);
+			}
+		}
+		@keyframes onda2{
+			0%{
+	    visibility: visible;
+		animation-timing-function: ease-out;
+		box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1), -5px -5px 5px rgba(255, 255, 255, 0.1);
+			}
+
+			100%{
+	    visibility: hidden;
+		animation-timing-function: ease-in;
+		box-shadow: 5px 5px 5px rgba(255, 255, 255, 0.3), -5px -5px 5px rgba(0, 0, 0, 0.3);
+			}
+		}
+
+		</style>
+
+	</head>
+	<body>
+		<div id="contenedor">
+
+		</div>
+
+	<script type="text/javascript">
+
+	function inicio(){
+
+		var x = 100 + Math.floor(Math.random() * 1100);
+		var y = 125 + Math.floor(Math.random() * 400);
+    	new lluvia( x , y);
+	}
+
+	function lluvia ( x, y){
+		var posicion = document.createElement("div");
+	    posicion.setAttribute("id", "posicion");
+
+		document.getElementById("contenedor").appendChild(posicion);
+
+	    var gota = document.createElement('div');
+	    gota.setAttribute('id', 'drop');
+	    gota.style.left = x + 'px';
+	    gota.style.top = y + 'px';
+	    
+	    posicion.appendChild(gota);
+
+
+   		var ringEls = new Array();
+    
+	    ringEls[0] = document.createElement('div');
+	    ringEls[1] = document.createElement('div');
+	    ringEls[2] = document.createElement('div');
+	    
+	    for (var i = 0; i < ringEls.length; i++) {
+	        ringEls[i].setAttribute('class', 'ring' + i);
+	        if(i==0){
+	        ringEls[i].style.left = (x -75) + 'px';
+	    	ringEls[i].style.top = (y- 75)+ 'px';
+	        }else if(i==1){
+	        ringEls[i].style.left = (x -50) + 'px';
+	    	ringEls[i].style.top = (y- 50)+ 'px';	
+	    	}else{
+	    	ringEls[i].style.left = (x -25) + 'px';
+	    	ringEls[i].style.top = (y- 25)+ 'px';
+	    	}
+	       	
+	        posicion.appendChild(ringEls[i]);
+	    }
+
+	    setTimeout(function () {document.getElementById("contenedor").removeChild(posicion);}, 5000);
+
+	}
+	
+	inicio()
+	setInterval(inicio, 400);
+
+	</script>
+	</body>
+</html>
